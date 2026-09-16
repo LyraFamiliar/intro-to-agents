@@ -1,0 +1,419 @@
+<title>Vivarium Dynamics Brand Standards</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --paper:#E8ECEA; --card:#F5F7F4; --ink:#14201F; --ink-2:#4A5A56;
+    --teal:#0F6B6B; --teal-deep:#0A4746; --teal-wash:#DCE6E4;
+    --alert:#C4491A; --alert-wash:#F2E2DA;
+    --rule:#C1CAC5; --rule-soft:#D6DED9;
+    --redact:#14201F;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0C1413; --card:#131D1B; --ink:#DDE5E0; --ink-2:#94A5A0;
+      --teal:#48AEA8; --teal-deep:#7FCFC9; --teal-wash:#12302E;
+      --alert:#F0793A; --alert-wash:#33190F;
+      --rule:#2A3734; --rule-soft:#1D2725;
+      --redact:#DDE5E0;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0C1413; --card:#131D1B; --ink:#DDE5E0; --ink-2:#94A5A0;
+    --teal:#48AEA8; --teal-deep:#7FCFC9; --teal-wash:#12302E;
+    --alert:#F0793A; --alert-wash:#33190F;
+    --rule:#2A3734; --rule-soft:#1D2725;
+    --redact:#DDE5E0;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Newsreader",Georgia,"Times New Roman",serif;
+    font-size:17px; line-height:1.62; margin:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  .doc{max-width:46rem; margin:0 auto; padding-inline:16px; padding-block:0 4rem}
+
+  /* ---------- controlled-document header ---------- */
+  .formbar{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:10;
+    background:var(--teal-deep); color:#F5F7F4;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:10.5px; letter-spacing:.09em; text-transform:uppercase;
+  }
+  .formbar-in{
+    max-width:46rem; margin:0 auto; padding:7px 16px;
+    display:flex; flex-wrap:wrap; gap:4px 18px; justify-content:space-between;
+  }
+  .formbar span{white-space:nowrap}
+
+  /* ---------- masthead ---------- */
+  .mast{border-bottom:2px solid var(--ink); padding-block:3.5rem 1.1rem; margin-bottom:.9rem}
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--teal); margin:0 0 1.1rem;
+  }
+  h1{
+    font-family:"Archivo Narrow","Arial Narrow",Helvetica,sans-serif;
+    font-weight:700; font-size:clamp(2.4rem,9vw,3.9rem); line-height:.95;
+    letter-spacing:-.015em; text-transform:uppercase; text-wrap:balance;
+    margin:0 0 .5rem;
+  }
+  .subtitle{
+    font-family:"Archivo Narrow","Arial Narrow",Helvetica,sans-serif;
+    font-weight:500; font-size:1.05rem; letter-spacing:.03em;
+    text-transform:uppercase; color:var(--ink-2); margin:0;
+  }
+  .mast-meta{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px;
+    color:var(--ink-2); line-height:1.8; margin-top:1.4rem;
+  }
+
+  /* ---------- clauses ---------- */
+  section{padding-block:2.4rem; border-top:1px solid var(--rule-soft)}
+  section:first-of-type{border-top:0}
+  h2{
+    font-family:"Archivo Narrow","Arial Narrow",Helvetica,sans-serif;
+    font-weight:700; font-size:1.45rem; letter-spacing:.005em;
+    text-transform:uppercase; text-wrap:balance;
+    margin:0 0 1rem; display:flex; gap:.7rem; align-items:baseline;
+  }
+  h2 .cl{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-weight:500;
+    font-size:.72em; color:var(--teal); letter-spacing:0; flex:none;
+  }
+  h3{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-weight:600;
+    font-size:11.5px; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--ink-2); margin:2rem 0 .7rem;
+  }
+  p{margin:0 0 1rem; max-width:62ch}
+  .lede{font-size:1.16rem; line-height:1.55}
+  em{font-style:italic}
+  strong{font-weight:500; color:var(--teal-deep)}
+
+  /* ---------- pull statement ---------- */
+  .thesis{
+    background:var(--teal-wash); border-left:3px solid var(--teal);
+    padding:1.3rem 1.4rem; margin:1.6rem 0;
+  }
+  .thesis p{margin:0; font-size:1.2rem; line-height:1.5; max-width:none}
+
+  /* ---------- boxed copy / specimen blocks ---------- */
+  .block{
+    background:var(--card); border:1px solid var(--rule);
+    padding:1.4rem 1.45rem; margin:1.4rem 0;
+  }
+  .block p:last-child{margin-bottom:0}
+  .attrib{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2);
+    margin-top:1rem;
+  }
+
+  /* ---------- voice: do / don't ---------- */
+  .voice{display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:1.2rem 0}
+  .voice > div{background:var(--card); padding:1.1rem 1.2rem}
+  .voice .lbl{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px;
+    letter-spacing:.13em; text-transform:uppercase; margin-bottom:.7rem;
+  }
+  .voice .ok .lbl{color:var(--teal)}
+  .voice .no .lbl{color:var(--alert)}
+  .voice ul{margin:0; padding-left:1.1rem}
+  .voice li{margin-bottom:.55rem; line-height:1.5}
+  .voice li:last-child{margin-bottom:0}
+  @media (min-width:640px){ .voice{grid-template-columns:1fr 1fr} }
+
+  /* ---------- palette ---------- */
+  .swatches{display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:1.2rem 0}
+  @media (min-width:520px){ .swatches{grid-template-columns:repeat(2,1fr)} }
+  .sw{background:var(--card); display:flex; gap:.95rem; align-items:center; padding:.85rem .95rem}
+  .chip{width:42px; height:42px; flex:none; border:1px solid rgba(20,32,31,.22)}
+  .sw-name{font-family:"Archivo Narrow","Arial Narrow",Helvetica,sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:.03em; font-size:.92rem; line-height:1.2}
+  .sw-meta{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; color:var(--ink-2); line-height:1.5}
+
+  /* ---------- type specimens ---------- */
+  .spec{border-top:1px solid var(--rule-soft); padding-block:1.1rem}
+  .spec:last-child{border-bottom:1px solid var(--rule-soft)}
+  .spec-role{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px;
+    letter-spacing:.13em; text-transform:uppercase; color:var(--teal); margin-bottom:.5rem;
+  }
+  .spec-sample{margin-bottom:.4rem}
+  .s-display{font-family:"Archivo Narrow","Arial Narrow",Helvetica,sans-serif; font-weight:700; text-transform:uppercase; font-size:2rem; line-height:1}
+  .s-body{font-family:"Newsreader",Georgia,serif; font-size:1.2rem}
+  .s-mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.95rem; letter-spacing:.02em}
+  .spec-note{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; color:var(--ink-2)}
+
+  /* ---------- tables ---------- */
+  .tw{overflow-x:auto; margin:1.2rem 0; border:1px solid var(--rule)}
+  table{border-collapse:collapse; width:100%; min-width:30rem; background:var(--card); font-size:.94rem}
+  th,td{text-align:left; padding:.7rem .9rem; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+  thead th{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-weight:600;
+    font-size:10.5px; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--ink-2); background:var(--paper); border-bottom:1px solid var(--rule);
+  }
+  tbody tr:last-child td{border-bottom:0}
+  .tier{font-family:"Archivo Narrow","Arial Narrow",Helvetica,sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:.03em; white-space:nowrap}
+  .num{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums; white-space:nowrap}
+
+  /* ---------- anomaly / alert clause ---------- */
+  .alert-clause{background:var(--alert-wash); border:1px solid var(--alert); padding:1.35rem 1.4rem; margin:1.4rem 0}
+  .alert-clause .lbl{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px;
+    letter-spacing:.13em; text-transform:uppercase; color:var(--alert); margin-bottom:.7rem;
+  }
+  .alert-clause p:last-child{margin-bottom:0}
+  .redact{background:var(--redact); color:transparent; padding:0 .45em; user-select:none; border-radius:1px}
+
+  /* ---------- prohibitions ---------- */
+  .prohib{list-style:none; margin:1.2rem 0; padding:0}
+  .prohib li{
+    display:flex; gap:.85rem; padding:.75rem 0; border-top:1px solid var(--rule-soft);
+    max-width:62ch;
+  }
+  .prohib li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .prohib .code{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px;
+    color:var(--teal); flex:none; padding-top:.25rem; letter-spacing:.04em;
+  }
+
+  /* ---------- signature + footer ---------- */
+  .sig{margin-top:2.2rem; padding-top:1.1rem; border-top:1px solid var(--rule)}
+  .sig-line{
+    font-family:"Newsreader",Georgia,serif; font-style:italic; font-size:1.5rem;
+    color:var(--teal-deep); border-bottom:1px solid var(--rule); padding-bottom:.35rem;
+    max-width:19rem;
+  }
+  .sig-name{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-2); margin-top:.55rem; line-height:1.7}
+  .colophon{
+    margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px;
+    letter-spacing:.07em; text-transform:uppercase; color:var(--ink-2); line-height:1.9;
+  }
+
+  @media print{
+    :root{--paper:#fff; --card:#fff; --ink:#000; --ink-2:#444; --rule:#999; --rule-soft:#ccc; --teal-wash:#fff; --alert-wash:#fff}
+    body{font-size:10.5pt}
+    .formbar{position:static; background:#fff; color:#000; border-bottom:1px solid #000}
+    .doc{max-width:none}
+    section{break-inside:avoid; page-break-inside:avoid}
+    .mast{padding-block:0 1rem}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+
+<div class="formbar"><div class="formbar-in">
+  <span>Vivarium Dynamics&trade;</span>
+  <span>Form VD&#8209;BG&#8209;001</span>
+  <span>Rev. 4</span>
+  <span>Controlled &mdash; Internal</span>
+</div></div>
+
+<div class="doc">
+
+  <header class="mast">
+    <p class="eyebrow">Brand Standards &amp; Editorial Control</p>
+    <h1>Vivarium Dynamics</h1>
+    <p class="subtitle">Biological Holdings &middot; Established 1993</p>
+    <div class="mast-meta">
+      Issued by the Office of Dr. M. Kessler, Founder &amp; Director of Authorship<br>
+      Supersedes Rev. 3 &middot; Applies to all divisions, packaging, and Registry correspondence<br>
+      Not for distribution outside Vivarium Dynamics
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="cl">&sect;1.0</span> Brand Truth</h2>
+    <p class="lede">Vivarium Dynamics sells living creatures that hatch from an egg &mdash; each one genetically unlike any that has existed before. We are not a novelty company. We are a laboratory that believes it has done something wonderful, and says so without irony.</p>
+    <div class="thesis">
+      <p>We declared war on chance, and we lose every single time &mdash; in public, one Specimen at a time.</p>
+    </div>
+    <p>Every claim we make is sincere. Every claim is also, in some small measure, untrue, because a Specimen always becomes something we did not specify. This is the engine of the brand: an institution that loves these animals so completely it believes it can author them, and keeps selling you the next attempt.</p>
+    <p><strong>Never wink.</strong> The moment our copy acknowledges the gap between what we promise and what arrives, the brand collapses into parody. We do not joke. We are proud, thorough, and slightly wrong.</p>
+  </section>
+
+  <section>
+    <h2><span class="cl">&sect;2.0</span> The Adversary</h2>
+    <p>Our competitor is not another laboratory. It is <em>randomness.</em></p>
+    <p>Before Vivarium, a living thing was whatever accident made it. We industrialised the lottery: coloration, character, and habit selected deliberately, so that nothing about your Specimen is left to luck. That is the promise, and it is the reason the work matters.</p>
+    <p>It follows that rarity is not a product. We do not sell odds, we do not advertise pull rates, and we do not price one egg above another. Every egg costs <span class="num">$4.99</span>. When a Specimen arrives unusual, that is not a prize we awarded &mdash; it is a result we did not intend, recorded honestly in the Registry.</p>
+    <p><strong>The Registry is a log of outcomes, not a rarity market.</strong> Write it as documentation. Never as a leaderboard.</p>
+  </section>
+
+  <section>
+    <h2><span class="cl">&sect;3.0</span> Voice</h2>
+    <p>Institutional sincerity. The register of a research organisation writing to someone it trusts with a living thing: warm, precise, faintly formal, never cute. Specimens are <em>observed</em> and <em>recorded</em>, never &ldquo;played with.&rdquo; Dormancy is a <em>phase.</em></p>
+    <div class="voice">
+      <div class="ok">
+        <p class="lbl">Correct</p>
+        <ul>
+          <li>&ldquo;Your Specimen is unlike any Specimen in recorded history.&rdquo;</li>
+          <li>&ldquo;Dormancy is a natural phase of the Specimen lifecycle.&rdquo;</li>
+          <li>&ldquo;Raise it well. Record what it becomes.&rdquo;</li>
+          <li>&ldquo;Variance is reported voluntarily.&rdquo;</li>
+        </ul>
+      </div>
+      <div class="no">
+        <p class="lbl">Prohibited</p>
+        <ul>
+          <li>Any acknowledgement that the Specimen is small, simple, or disappointing.</li>
+          <li>Humour at the Specimen&rsquo;s expense, or at our own.</li>
+          <li>The words <em>die, dead, death, pet, toy, gimmick.</em></li>
+          <li>Exclamation marks in Registry correspondence.</li>
+        </ul>
+      </div>
+    </div>
+    <h3>Nomenclature</h3>
+    <p><em>Specimen</em> is always capitalised and always singular when addressing an owner. <em>Registry</em> and <em>Legacy Services</em> carry the trademark on first use per surface. The company is <em>Vivarium Dynamics</em> &mdash; never abbreviated to VD in customer-facing copy, for reasons the Office considers self-evident.</p>
+  </section>
+
+  <section>
+    <h2><span class="cl">&sect;4.0</span> Core Copy</h2>
+    <p>The approved master paragraph. Reproduce verbatim on cartons, inserts, and the Registry enrollment card.</p>
+    <div class="block">
+      <p>At Vivarium Dynamics, we believe no living thing should be left to chance. Since 1993, our laboratories have worked toward a single goal: a creature authored with intention &mdash; its color, its character, its every small habit chosen with care, so that nothing about it is accidental. Your Specimen arrives as an egg, dormant and complete, carrying a genetic signature that has never existed before and will never exist again. Raise it well. Record what it becomes. Report what surprises you. We are still learning, and every Specimen teaches us something we did not intend to know.</p>
+      <p class="attrib">Approved master copy &middot; M. Kessler &middot; Rev. 4</p>
+    </div>
+    <h3>Approved lines</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Line</th><th>Placement</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Life, individually authored.</strong></td><td>Primary tagline. Lockup, all surfaces.</td></tr>
+        <tr><td>No two have ever been alike. We are working on it.</td><td>Carton front.</td></tr>
+        <tr><td>No living thing should be left to chance.</td><td>Campaign headline, trade press.</td></tr>
+        <tr><td>Preserved. Continued. Reanimated.</td><td>Legacy Services ladder.</td></tr>
+        <tr><td>Specimens are authored to specification. Variance is reported voluntarily.</td><td>Fine print, every surface.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2><span class="cl">&sect;5.0</span> Colour</h2>
+    <p>Two working colours and a paper. Clinical Teal is the company. Deviation Orange is <em>reserved</em> &mdash; it may only appear on material concerning anomaly, variance, or Recovery. It is never decorative, and never used to excite.</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#0F6B6B"></div><div><div class="sw-name">Clinical Teal</div><div class="sw-meta">#0F6B6B &middot; brand, rules, headings</div></div></div>
+      <div class="sw"><div class="chip" style="background:#0A4746"></div><div><div class="sw-name">Containment Deep</div><div class="sw-meta">#0A4746 &middot; form bars, signature</div></div></div>
+      <div class="sw"><div class="chip" style="background:#E8ECEA"></div><div><div class="sw-name">Lab Paper</div><div class="sw-meta">#E8ECEA &middot; ground</div></div></div>
+      <div class="sw"><div class="chip" style="background:#14201F"></div><div><div class="sw-name">Record Ink</div><div class="sw-meta">#14201F &middot; body text</div></div></div>
+      <div class="sw"><div class="chip" style="background:#C4491A"></div><div><div class="sw-name">Deviation Orange</div><div class="sw-meta">#C4491A &middot; restricted &mdash; anomaly only</div></div></div>
+      <div class="sw"><div class="chip" style="background:#C1CAC5"></div><div><div class="sw-name">Rule Grey</div><div class="sw-meta">#C1CAC5 &middot; hairlines, tables</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="cl">&sect;6.0</span> Typography</h2>
+    <div class="spec">
+      <p class="spec-role">Display &mdash; Archivo Narrow, Bold, uppercase</p>
+      <div class="spec-sample s-display">Specimen No. 4408&#8209;K</div>
+      <p class="spec-note">Headlines, product names, tier titles. Tight leading. Never italic, never sentence case.</p>
+    </div>
+    <div class="spec">
+      <p class="spec-role">Body &mdash; Newsreader, Regular</p>
+      <div class="spec-sample s-body">Raise it well. Record what it becomes.</div>
+      <p class="spec-note">All reading copy, manuals, Registry letters. The serif is where our sincerity lives &mdash; it is the reason we are believed.</p>
+    </div>
+    <div class="spec">
+      <p class="spec-role">Data &mdash; IBM Plex Mono</p>
+      <div class="spec-sample s-mono">GEN-SIG 8F2A-1193 / CLASS: ANOMALOUS / REV 4</div>
+      <p class="spec-note">Genome signatures, form numbers, prices, fine print, table headers. Tabular figures required wherever numbers align.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="cl">&sect;7.0</span> Product Architecture</h2>
+    <p>One identity, two vocabularies. The division exists because a child and a collector cannot be told the same thing about dormancy.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Line</th><th>Audience</th><th>Vocabulary</th><th class="num">Price</th></tr></thead>
+      <tbody>
+        <tr><td class="tier">Specimens&trade;</td><td>Retail peg, children and the adults who pay</td><td>Warm, simple, lifecycle framed as sleep and eggs. Never mentions Class.</td><td class="num">$4.99</td></tr>
+        <tr><td class="tier">The Vivarium Registry</td><td>Enthusiast and archival owners</td><td>Full clinical record. Class, genome signature, deviation notes, Legacy ladder.</td><td class="num">Enrollment</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2><span class="cl">&sect;8.0</span> Legacy Services&trade;</h2>
+    <p class="lede">Dormancy is not the end of your Specimen&rsquo;s story.</p>
+    <p>A Specimen&rsquo;s season concludes in Permanent Dormancy&trade;. Legacy Services exist so that what it was does not have to be lost. Copy for these tiers is written as care, because that is what it is.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Tier</th><th>Service</th><th>Description</th><th class="num">Price</th></tr></thead>
+      <tbody>
+        <tr><td class="num">I</td><td class="tier">Preservation</td><td>Mounted under glass. Brass plate, genome signature, Registry class.</td><td class="num">$39</td></tr>
+        <tr><td class="num">II</td><td class="tier">Continuance</td><td>Trait profile rendered in plush at 400&times; scale, hand-matched to the Registry record. One&#8209;of&#8209;one, because it was.</td><td class="num">$129</td></tr>
+        <tr><td class="num">III</td><td class="tier">Reanimation</td><td>Robotics chassis built to the Specimen&rsquo;s recorded movement signature. Three interactivity levels.</td><td class="num">$899</td></tr>
+        <tr><td class="num">IV</td><td class="tier">Registry Eternal</td><td>Registry Class Specimens only. By invitation.</td><td class="num">&mdash;</td></tr>
+      </tbody>
+    </table></div>
+    <h3>Reanimation &mdash; interactivity levels</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Level</th><th>Behaviour</th><th class="num">Monthly compute</th></tr></thead>
+      <tbody>
+        <tr><td class="tier">Reflexive</td><td>On&#8209;device only. Light, touch, and motion response. No network.</td><td class="num">$0</td></tr>
+        <tr><td class="tier">Responsive</td><td>Learns the household. Recognises face and voice; develops preferences.</td><td class="num">$14</td></tr>
+        <tr><td class="tier">Continuant</td><td>Full behavioural model trained on dormancy&#8209;phase data. Conversational. Remembers.</td><td class="num">$49</td></tr>
+      </tbody>
+    </table></div>
+    <div class="block">
+      <p>Compute fees reflect actual inference costs and are passed to the owner without markup. <strong>Vivarium Dynamics does not profit from your Specimen&rsquo;s cognition.</strong></p>
+      <p class="attrib">Mandatory disclosure &middot; all Reanimation surfaces</p>
+    </div>
+    <p>On lapsed payment, a Reanimation unit reverts to Reflexive. It is not deactivated. Copy must state this plainly and must not soften it: the Specimen remains present, and no longer recognises its owner. The Office considers accuracy here a matter of ethics.</p>
+  </section>
+
+  <section>
+    <h2><span class="cl">&sect;9.0</span> Anomalous Specimens</h2>
+    <div class="alert-clause">
+      <p class="lbl">Restricted &mdash; Deviation Orange permitted</p>
+      <p>A Specimen exhibiting deviation from intended expression was failed at the moment of authorship. It did not choose its condition. Neither did we.</p>
+      <p><strong>The Voluntary Specimen Recovery Program&trade;</strong> offers complimentary Preservation, expedited collection, and a <span class="num">$200</span> Registry credit for any such Specimen. This is a rescue. It is never to be described as a recall, a buy&#8209;back, or a defect claim.</p>
+    </div>
+    <div class="block">
+      <p>&ldquo;An Anomalous Specimen did not choose its condition. Neither did we. Let us take it home.&rdquo;</p>
+      <p class="attrib">M. Kessler &middot; Owner&rsquo;s Manual, 4th edition</p>
+    </div>
+    <p>Recovery is offered in good faith. Owners who decline are not to be contacted a second time. Correspondence regarding unreported deviation is handled by the Office directly and does not appear in Registry records.</p>
+    <p>Materials produced by <span class="redact">Fen Biologic</span> are not to be referenced, rebutted, or acknowledged in any Vivarium surface. Where the founding team is described, the approved phrasing is <em>&ldquo;a former member of the founding team.&rdquo;</em> No name is to be printed.</p>
+  </section>
+
+  <section>
+    <h2><span class="cl">&sect;10.0</span> Prohibitions</h2>
+    <ul class="prohib">
+      <li><span class="code">P&#8209;01</span><span><strong>No wild release.</strong> Under no circumstances is a Specimen to be introduced to an uncontained environment. Containment is not a safety measure; it is the whole of our purpose. Outside, chance resumes.</span></li>
+      <li><span class="code">P&#8209;02</span><span><strong>No sale of rarity.</strong> No premium egg, no graded pack, no published odds, no purchasable advantage.</span></li>
+      <li><span class="code">P&#8209;03</span><span><strong>No duplicate authorship.</strong> A retired genome signature is never reissued. Uniqueness is not a feature; it is a commitment.</span></li>
+      <li><span class="code">P&#8209;04</span><span><strong>No irony.</strong> Not in copy, not in art direction, not in the fine print. We mean all of it.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="cl">&sect;11.0</span> Revision Record</h2>
+    <div class="tw"><table>
+      <thead><tr><th class="num">Rev.</th><th>Date</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="num">1993</td><td>Original issue. Two signatures.</td></tr>
+        <tr><td class="num">2</td><td class="num">1997</td><td>Signature block amended. Clause P&#8209;01 added.</td></tr>
+        <tr><td class="num">3</td><td class="num">2004</td><td>Legacy Services introduced (Tiers I&ndash;II).</td></tr>
+        <tr><td class="num">4</td><td class="num">Current</td><td>Reanimation added. Recovery Program language standardised. Clause P&#8209;04 added.</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="sig">
+      <div class="sig-line">M. Kessler</div>
+      <div class="sig-name">
+        Dr. Miriam Kessler &middot; Founder &amp; Director of Authorship<br>
+        Countersignature vacant since Rev. 2
+      </div>
+    </div>
+  </section>
+
+  <div class="colophon">
+    Property of Vivarium Dynamics Biological Holdings &middot; Form VD&#8209;BG&#8209;001 Rev. 4<br>
+    Controlled document &mdash; reproduction outside the Office of Authorship is prohibited<br>
+    Life, individually authored.&trade;
+  </div>
+
+</div>
