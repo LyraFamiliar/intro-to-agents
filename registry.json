@@ -1,0 +1,31 @@
+{
+  "specimens": [
+    {
+      "id": "VD-0417-K",
+      "class": "III",
+      "hatched": "2026-03-02",
+      "season_closed": "2026-09-14",
+      "status": "dormant",
+      "authored_traits": ["teal banded carapace", "four-beat gait", "positive phototaxis"],
+      "variance": ["vocalisation at dusk, repeated on eleven nights"]
+    },
+    {
+      "id": "VD-0418-A",
+      "class": "I",
+      "hatched": "2026-08-30",
+      "season_closed": null,
+      "status": "active",
+      "authored_traits": ["pale carapace", "two-beat gait"],
+      "variance": []
+    },
+    {
+      "id": "VD-0402-M",
+      "class": "IV",
+      "hatched": "2025-11-11",
+      "season_closed": "2026-06-01",
+      "status": "anomalous",
+      "authored_traits": ["banded carapace", "negative phototaxis"],
+      "variance": ["responds to its Registry number", "declines to enter dormancy on schedule"]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #E8ECEA; }
+    a { color: #0F6B6B; } a:hover { color: #0A4746; }
+  </style>
+</helmet>
+<div style="width: 1200px; height: 1200px; background: #E8ECEA; color: #14201F; display: flex; flex-direction: column; font-family: 'Newsreader', Georgia, 'Times New Roman', serif;">
+
+  <div style="background: #0A4746; color: #F5F7F4; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 20px; letter-spacing: .09em; text-transform: uppercase; padding: 18px 64px; display: flex; gap: 32px; justify-content: space-between;">
+    <span style="white-space: nowrap;">Vivarium Dynamics&trade;</span>
+    <span style="white-space: nowrap;">Form VD&#8209;RG&#8209;204</span>
+    <span style="white-space: nowrap;">{{tone.formLabel}}</span>
+  </div>
+
+  <div style="flex-grow: 1; display: flex; flex-direction: column; padding: 72px 64px 0;">
+
+    <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 22px; letter-spacing: .16em; text-transform: uppercase; color: {{tone.accent}}; margin-bottom: 44px;">{{tone.eyebrow}}</div>
+
+    <h1 style="font-family: 'Archivo Narrow', 'Arial Narrow', Helvetica, sans-serif; font-weight: 700; font-size: 104px; line-height: .95; letter-spacing: -.015em; text-transform: uppercase; text-wrap: balance; margin: 0 0 40px; color: #14201F;">No two have ever been alike. We are working on it.</h1>
+
+    <div style="border-left: 4px solid {{tone.accent}}; background: {{tone.wash}}; padding: 32px 36px; margin-bottom: 40px;">
+      <p style="margin: 0; font-size: 34px; line-height: 1.5; color: #14201F;">Your Specimen arrives as an egg, dormant and complete, carrying a genetic signature that has never existed before and will never exist again.</p>
+    </div>
+
+    <p style="margin: 0; font-size: 30px; line-height: 1.55; max-width: 26ch; color: #4A5A56;">Raise it well. Record what it becomes. Report what surprises you.</p>
+
+  </div>
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; padding: 0 64px 56px;">
+    <div style="font-family: 'Archivo Narrow', 'Arial Narrow', Helvetica, sans-serif; font-weight: 700; font-size: 46px; line-height: 1; letter-spacing: -.01em; text-transform: uppercase; color: #0A4746;">Life, individually<br>authored.</div>
+    <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 17px; line-height: 1.6; color: #4A5A56; text-align: right; max-width: 40ch;">Specimens are authored to specification.<br>Variance is reported voluntarily.</div>
+  </div>
+
+  <div style="height: 14px; background: {{tone.accent}}; flex: none;"></div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"tone":{"editor":"enum","options":["Standard","Anomaly"],"default":"Standard","section":"Notice"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var anomaly = this.props.tone === 'Anomaly';
+    return {
+      tone: anomaly
+        ? { accent: '#C4491A', wash: '#F2E2DA', eyebrow: 'Anomalous Specimen · Recovery Program', formLabel: 'Anomaly — Public' }
+        : { accent: '#0F6B6B', wash: '#DCE6E4', eyebrow: 'The Vivarium Registry · Est. 1993', formLabel: 'Controlled — Public' }
+    };
+  }
+}
+</script>
+</body>
+</html>

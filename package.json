@@ -1,0 +1,14 @@
+{
+  "name": "vivarium-content-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Content manager agent for the Vivarium Dynamics branding exercise",
+  "scripts": {
+    "draft": "node scripts/run-agent.mjs",
+    "post": "node scripts/run-agent.mjs --post"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0"
+  }
+}

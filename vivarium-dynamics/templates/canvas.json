@@ -1,0 +1,11 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1200, "h": 1200, "title": "Bluesky post card" },
+    { "file": "RegistryNotice.dc.html", "x": 1320, "y": 0, "w": 794, "h": 1123, "title": "Registry dormancy notice", "print": "fixed" },
+    { "file": "SpecimenCard.dc.html", "x": 2234, "y": 0, "w": 720, "h": 450, "title": "Specimen record card" }
+  ],
+  "annotations": [
+    { "id": "agent-fill", "x": 2234, "y": 570, "w": 400, "text": "Bracketed values are merge fields the content agent fills:\n[OWNER NAME], [DATE], [NAME].\n\nThe post card's Standard/Anomaly switch sets teal vs alert across the whole layout." }
+  ],
+  "launch": { "view": "canvas" }
+}
